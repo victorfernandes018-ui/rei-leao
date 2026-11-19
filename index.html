@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Rei Leão — Site Interativo</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦁</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Cursor/scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#topo" class="nav-logo">🦁 <span>O Rei Leão</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#topo">Início</a></li>
+      <li><a href="#personagens">Personagens</a></li>
+      <li><a href="#curiosidades">Curiosidades</a></li>
+      <li><a href="#momentos">Momentos</a></li>
+      <li><a href="#frases">Frases</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" title="Alternar Dia/Noite">🌙</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="topo" class="hero">
+  <div class="sky">
+    <div class="sun-moon" id="sunMoon"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="stars" id="stars"></div>
+  </div>
+  <div class="birds">🐦</div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Bem-vindo à Terra do Orgulho</p>
+    <h1 class="hero-title">O REI LEÃO</h1>
+    <p class="hero-subtitle">Explore personagens, curiosidades, momentos icônicos e frases inesquecíveis do clássico da Disney</p>
+    <a href="#personagens" class="btn-cta">Começar a Aventura <span class="paw">🐾</span></a>
+  </div>
+  <div class="pride-rock"></div>
+  <div class="savanna-fg"></div>
+  <div class="scroll-hint">Role para explorar ↓</div>
+</header>
+
+<!-- INTRO / SOBRE -->
+<section class="about">
+  <div class="container">
+    <h2 class="section-title">🌍 Sobre a História</h2>
+    <p class="about-text">
+      Lançado pela Disney em <strong>1994</strong>, <em>O Rei Leão</em> conta a jornada de <strong>Simba</strong>,
+      um jovem leão príncipe que precisa superar a tragédia, o exílio e o medo para reivindicar seu lugar
+      como rei das Terras do Orgulho. Inspirado livremente em <strong>Hamlet</strong>, de Shakespeare, e na
+      história bíblica de José, o filme se tornou um marco da animação mundial — com trilha sonora de
+      <strong>Hans Zimmer</strong> e canções de <strong>Elton John</strong> e <strong>Tim Rice</strong>.
+    </p>
+    <div class="stats-row">
+      <div class="stat-card"><span class="stat-num">1994</span><span class="stat-label">Ano de lançamento</span></div>
+      <div class="stat-card"><span class="stat-num">2</span><span class="stat-label">Oscars (trilha e canção)</span></div>
+      <div class="stat-card"><span class="stat-num">1997</span><span class="stat-label">Estreia do musical na Broadway</span></div>
+      <div class="stat-card"><span class="stat-num">2019</span><span class="stat-label">Remake em live-action/CGI</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAGENS -->
+<section id="personagens" class="personagens">
+  <div class="container">
+    <h2 class="section-title">🦁 Personagens</h2>
+    <p class="section-sub">Clique em um card para conhecer mais sobre cada habitante das Terras do Orgulho<br>
+    <em>Fotos reais dos animais que inspiraram cada personagem — não é possível usar a arte oficial da Disney por direitos autorais.</em></p>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+</section>
+
+<!-- CURIOSIDADES -->
+<section id="curiosidades" class="curiosidades">
+  <div class="container">
+    <h2 class="section-title">✨ Curiosidades</h2>
+    <p class="section-sub">Fatos e bastidores que tornam essa história ainda mais especial</p>
+    <div class="curio-grid" id="curioGrid"></div>
+  </div>
+</section>
+
+<!-- MOMENTOS ICÔNICOS -->
+<section id="momentos" class="momentos">
+  <div class="container">
+    <h2 class="section-title">🎬 Momentos Icônicos</h2>
+    <p class="section-sub">Os instantes que marcaram gerações, em ordem de acontecimento no filme</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- FRASES -->
+<section id="frases" class="frases">
+  <div class="container">
+    <h2 class="section-title">💬 Frases Inesquecíveis</h2>
+    <div class="frases-carousel" id="frasesCarousel"></div>
+    <div class="frases-nav">
+      <button id="prevFrase" class="frase-btn">‹</button>
+      <div class="frase-dots" id="frasesDots"></div>
+      <button id="nextFrase" class="frase-btn">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="quiz-section">
+  <div class="container">
+    <h2 class="section-title">🎯 Quiz: Você Conhece as Terras do Orgulho?</h2>
+    <div class="quiz-box" id="quizBox">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+      <div id="quizContent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL personagem -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>🦁 Feito com <span class="heart">♥</span> para todos os fãs das Terras do Orgulho.</p>
+    <p class="footer-small">Site fã-feito e educativo, sem fins comerciais. "O Rei Leão" é uma obra © The Walt Disney Company.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
